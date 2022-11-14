@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script>
+        function add() {
+            //<label>Ciao da javascript</label>
+            var nuovalabel = document.createElement('label'); //<label></label>
+            nuovalabel.innerText = "Ciao da javascript" //<label>Ciao da javascript</label>
+            nuovalabel.style.backgroundColor = 'red'
+            document.getElementById('contenitore').appendChild(nuovalabel)
+
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    <button onclick="add()">Aggiunta label run-time</button>
+    <div id="contenitore">
+
+    </div>
+
+</body>
+
+</html>

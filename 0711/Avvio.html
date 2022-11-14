@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var anni = 0;
+
+
+        function suRichiesta() {
+            document.getElementById('nome_mio').setAttribute('corso', "Valore cambiato al caricamento della pagina")
+            alert(document.getElementById("nome_mio").getAttribute('corso'));
+        }
+    </script>
+</head>
+
+<body>
+
+    <label id="etichetta" for="">Inserisci la città di nascita</label>
+    <input type="text" id="citta">
+
+    <script>
+        anni = 54;
+    </script>
+
+    <react id="nome_mio" corso="Primo giorno di React">Ciao da React</react>
+
+    <br><br>
+    <button onclick="suRichiesta()">Richiamare funzione per cambiare valore all'attributyo customizzato</button>
+    <br><br>
+    <button onclick="cambiaEtichetta()">Cambia valore all'etichetta</button>
+
+    <br><br>
+    <button onclick="stringa()">Gestione stringhe</button>
+
+</body>
+
+<script>
+    // alert("Gli anni inseriti sono:" + anni)
+    document.getElementById("citta").value = "Caserta"
+    document.getElementById("etichetta").value = "Digitare città"
+</script>
+
+
+<script>
+    function stringa() {
+        var nome = "Fabio";
+        var cognome = "D'Apuzzo";
+        //alert(nome + cognome)
+        //Fabio D'Apuzzo
+        //"Nome":Fabio - "Cognome":D'Apuzzo
+        //backtik  ``    - codice ascii alt 96   
+        var persona = `"Nome":Fabio - "Cognome":D'Apuzzo`;
+        //alert(persona);
+        var nuovapersona = `"Nome":${nome} - "Cognome":${cognome} - ${anni>17?'Maggiorenne':'Minorenne'}`
+        alert(nuovapersona);
+
+
+    }
+
+
+    function cambiaEtichetta() {
+        document.getElementById("etichetta").innerText = "Sono il nuovo valore assegnato all'etichetta"
+        document.getElementById("etichetta").innerHTML = '<span>Ciao dallo span</span>'
+    }
+</script>
+
+
+</html>

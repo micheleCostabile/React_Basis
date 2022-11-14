@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="vedipersona('Saverio','Bollino',26,'Programmatore')">Saverio Bollino 26 - Programmatore</button>
+    <button onclick="vedipersona('Marta','Golini',34,'Programmatore','Analista')">Marta Golini 34 - Programmatore analista</button>
+    <button onclick="vedipersona('Laura','Baletti',46,'Programmatore','Analista','PM','CEO')"> Laura Baletti 46 Programmatore analista PM CEO</button>
+
+</body>
+
+
+<script>
+    function vedipersona(nome, cognome, anni, ...lavoro) {
+        alert(`Nome:${nome} - Cognome:${cognome} - anni:${anni} - lavoro:${lavoro}`)
+        alert(lavoro.length)
+        var developer = lavoro.filter(
+            (recrui) => recrui == 'CEO'
+        )
+        console.log(developer)
+    }
+</script>
+
+</html>

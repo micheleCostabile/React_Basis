@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Socket.io</title>
+</head>
+
+<body>
+    <h1>Aperta una comunicazione tramite Socket.io!</h1>
+
+    <p>
+        <label for="" id="ute"></label>
+        <input type="button" value="Invia messaggio" id="poke" />
+        <input type="text" id="invio" style="background-color: aqua;" >
+        <label for="" id="ricezione"></label>
+    </p>
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://localhost:8888');
+        var username = prompt('Come ti chiami amico?');
+        socket.emit('connesso', username);
+        socket.on('message', function (message) {
+            console.log('Il server dice: ' + message);
+            $("#ute").text(username);
+        });
+
+        $('#poke').click(function () {
+            socket.emit('message', 'Hey server, ci sono anch\'io!');
+        });
+
+        socket.on('ricevuto', function (message) {
+            //alert('Il server dice: ' + message);
+        });
+
+
+        $('#invio').change(function () {
+            ////console.log($('#testo').val());
+            socket.emit('inviare', $('#invio').val());
+            ///socket.emit('scritto', $('#testo').val());
+        });
+
+        socket.on('tuttiricevuto', function (message) {
+            $('#ricezione').text(message)            
+        });
+    </script>
+</body>
+
+</html>

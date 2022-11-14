@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var citta1 = {
+            nome: 'Roma',
+            abitanti: 6000000
+        }
+        var citta2 = citta1;
+        citta2.abitanti = 5000000
+            //console.log(citta1);
+
+
+        function nuovooggetto(oggettoroginale, nuovonumeroabitanti, regione) {
+            return Object.assign({},
+                oggettoroginale, //oggetto originale da cui partire
+                { //modifiche che voglio apportare al nuov oggetto risultante
+                    abitanti: nuovonumeroabitanti,
+                    regione: regione
+                }
+            )
+        }
+
+        var nuovacitta = nuovooggetto(citta1, 22500, 'Lazio')
+            //console.log(citta1);
+            // console.log(nuovacitta)
+
+
+        var listacitta = [citta1, nuovacitta];
+        //console.log(listacitta)
+        var citta3 = nuovooggetto(nuovacitta, 1000000, 'Campania')
+            //console.log(citta3);
+            // var listatoNuovo = [...listacitta, citta3]; //immutabilità degli array
+
+
+        var listatoNuovo = crea(listacitta, citta3)
+            //listacitta[0].nome = "Parigi"  -- controllare
+        console.log(listatoNuovo)
+        console.log(listacitta)
+
+
+        function crea(array, nuovovalore) {
+            return [...array, nuovovalore];
+        }
+    </script>
+
+
+</body>
+
+</html>

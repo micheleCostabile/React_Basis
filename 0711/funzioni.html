@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <button onclick="classica()">Funzione classica</button> <br>
+    <button onclick="anonima()">Funzione anonima</button> <br>
+    <button onclick="arrow()">Lambda expression- Arrow function</button>
+    <br>
+    <label for="">Call back</label>
+    <button onclick="calcolatrice(somma,10,50)">Somma</button>
+    <button onclick="calcolatrice(dividi,10,50)">Dividi</button>
+    <button onclick="calcolatrice(sottrai,10,50)">Sottrai</button>
+    <button onclick="calcolatrice(moltiplica,10,50)">Moltiplica</button>
+
+</body>
+
+<script>
+    function classica() {
+        alert("Sono una funzione identicaai metodi della OOP")
+    }
+
+    function anonima() {
+        var funzioneanonima = function(materia) {
+            return "Funzione estemporanea. Il valore ricevuto è:" + materia;
+        }
+
+        alert(funzioneanonima('Javascript'));
+    }
+
+
+    function arrow() {
+        var arrowfunction = (parametro, par2) => {
+            return `Sono un'arrow function e ho ricevuto il seguente valore del parametro ${parametro} - ${par2}`
+        }
+        alert(arrowfunction('Prova'))
+    }
+
+    function somma(val1, val2) {
+        return val1 + val2;
+    }
+
+    function sottrai(val1, val2) {
+        return val2 - val1;
+    }
+
+    function dividi(val1, val2) {
+        return val2 / val1;
+    }
+
+    function moltiplica(val1, val2) {
+        return val1 * val2;
+    }
+
+
+    function calcolatrice(tipocalcolo, numero1, numero2) {
+        alert(tipocalcolo(numero1, numero2));
+    }
+</script>
+
+</html>

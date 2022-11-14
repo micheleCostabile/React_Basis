@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //String citta=new String[5];
+        var citta = [
+            'Bari',
+            'Livorno',
+            'La Spezia',
+            6000,
+            false, [
+                500,
+                1200, {
+                    prodotto: 'Computer',
+                    costo: 1200
+                }
+            ]
+        ];
+        // alert(citta.length);
+        citta[1] = 'Firenze';
+        //alert(citta[1]);
+
+        var anni = 20;
+        var studio = 'Ingegnere';
+        //alert(studio * 5)
+        var stipendio = 1900.60
+        var maggiorenne = true
+            // alert(typeof anni);
+            //alert(typeof studio);
+            // alert(typeof stipendio)
+            //alert(typeof maggiorenne)
+            //alert(typeof citta)
+            //anni = '45';
+            // alert(typeof anni)
+
+        for (var city of citta) {
+            //alert(city)
+        }
+
+        for (var nomeposizione in citta) {
+            //alert(nomeposizione);
+        }
+
+        var computer = {
+            processore: 'I9',
+            ram: '32gb',
+            monitor: '18"'
+        }
+
+        for (var nomechiave in computer) {
+            // alert(nomechiave)
+            //alert(computer[nomechiave])
+        }
+
+        // alert(computer.processore)+
+        //alert(typeof computer)
+        /*
+        for (string city :citta)  
+        {
+
+        }
+        foreach(string city in citta)
+        {
+
+        }
+        */
+
+        //alert(citta[5][1])
+        //alert(citta[5][2].prodotto)
+        citta[10] = 'Londra'
+            //alert(citta[10]);
+        for (var contenutoposizione of citta) {
+            //alert(contenutoposizione);
+        }
+
+        for (var posizione in citta) {
+            //alert(posizione)
+        }
+
+        citta.push('Roma');
+        //alert(citta.length)
+
+        citta.splice(1, 1)
+            //alert(citta.length)
+
+
+        //alert(anni)
+
+        anniricevuti = '20';
+        //alert(typeof anniricevuti)
+
+
+        if (anni !== anniricevuti) {
+            // alert('I valori sono uguali')
+        } else {
+            //alert('I valori sono diversi');
+        }
+
+        var scelta = 0;
+        var choose = false
+
+        if (scelta === choose) {
+            // alert('uguali')
+        } else {
+            // alert('diversi')
+        }
+
+        var cittaitaliane = ['Napoli', 'Reggio Calabria', 'Palermo', 'Sassari']
+
+        citta.push(...cittaitaliane); //operatore spread
+        //alert(citta.length)
+        // console.log(...citta)
+
+
+        var computer2 = {
+            processore: 'I7',
+            ram: '16gb',
+            monitor: '16"'
+        }
+        var computer3 = {
+            processore: 'I9',
+            ram: '32gb',
+            monitor: '21"'
+        }
+
+        var computer4 = {
+            processore: 'I7',
+            ram: '32gb',
+            monitor: '18"'
+        }
+
+        var listaprodotti = [
+            computer, computer2, computer3, computer4
+        ]
+
+        // console.log(listaprodotti)
+
+
+        var nuoviprodotti = listaprodotti.map(
+            (product) => {
+                return (product.processore + (product.processore == 'I9' ? " evoluto" : ' obsoleto'))
+            }
+        )
+
+        //console.log(nuoviprodotti)
+        //console.log(listaprodotti)
+        var prodottievoluti = listaprodotti.filter(
+            (product) => product.processore == 'I9'
+        )
+
+        console.log(prodottievoluti)
+    </script>
+
+</body>
+
+</html>

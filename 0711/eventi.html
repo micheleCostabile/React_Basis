@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p onmouseover="cambiap1('orange')" onmouseout="tornap1('aqua')" id="p1">Sono il paragrfo n.1</p>
+    <p id="p2">Sono il paragrfo n.2</p>
+    <p id="p3">Sono il paragrfo n.3</p>
+
+</body>
+
+
+<script>
+    //prima tipologia
+    /*
+    function cambiap1() {
+        document.getElementById('p1').style.backgroundColor = 'orange';
+    }
+
+    function tornap1() {
+        document.getElementById('p1').style.backgroundColor = 'aqua'
+    }
+    */
+    function cambiap1(colore) {
+        document.getElementById('p1').style.backgroundColor = colore; // 'orange';
+    }
+
+    function tornap1(colore) {
+        document.getElementById('p1').style.backgroundColor = colore; // 'aqua'
+    }
+
+
+
+
+
+    //seconda tipologia
+    function cambia2() {
+        document.getElementById('p2').style.backgroundColor = 'blue';
+    }
+
+    function tornap2() {
+        document.getElementById('p2').style.backgroundColor = 'yellow'
+    }
+    document.getElementById('p2').onmouseover = cambia2;
+    document.getElementById('p2').onmouseout = tornap2;
+
+
+    //terza tipologia
+    function cambia3() {
+        document.getElementById('p3').style.backgroundColor = 'green';
+    }
+
+    function tornap3() {
+        document.getElementById('p3').style.backgroundColor = 'grey'
+    }
+    document.getElementById('p3').addEventListener('mouseover', cambia3);
+    document.getElementById('p3').addEventListener('mouseout', tornap3);
+    document.getElementById('p3').addEventListener('mouseover', cambia2);
+    document.getElementById('p3').addEventListener('mouseout', tornap2)
+    document.getElementById('p3').removeEventListener('mouseover', cambia2);
+    document.getElementById('p3').removeEventListener('mouseout', tornap2);
+</script>
+
+</html>

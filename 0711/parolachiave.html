@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="cambia1(this)" materia="Geografia" style="background-color: aqua ;">Celeste</button>
+    <button onclick="cambia1(this)" materia="Analisi" style="background-color:yellow">Giallo</button>
+    <button onclick="cambia1(this)" style="background-color: burlywood ;" materia="Matematica">Legno</button>
+
+    <br><br>
+    <p id="p1">Sono un paragrafo con del testo generico</p>
+
+</body>
+
+
+<script>
+    function cambia(colore) {
+        document.getElementById('p1').style.backgroundColor = colore
+    }
+
+    function cambia1(oggetto) {
+        document.getElementById('p1').style.backgroundColor = oggetto.style.backgroundColor
+        oggetto.innerText = "Cambiato"
+        alert(oggetto.getAttribute('materia'));
+    }
+</script>
+
+</html>

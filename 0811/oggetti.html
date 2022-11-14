@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" value="pippo">
+
+    <script>
+        //oggetti semplificati
+        var persona = {
+            nome: 'Fabiola',
+            anni: 40,
+            citta: 'Firenze',
+            descrizione: function(sport) {
+                return `Nome:${this.nome} - citta:${this.citta} - sport:${sport}`
+            }
+        }
+
+        //alert(persona.citta);
+        persona.anni = 61;
+        //alert(persona.descrizione('Calcio'))
+
+
+        ///oggetti con funzioni
+        function Treno(partenza, arrivo) { //similitudine con una classe
+            this.partenza = partenza;
+            this.arrivo = arrivo;
+            this.descrizione = () => {
+                return `Partenza:${this.partenza} - Arrivo:${this.arrivo}`
+            }
+        }
+
+        var mi_rm = new Treno('Milano', 'Roma');
+        var ba_an = new Treno('Bari', 'Ancona');
+
+        //alert(mi_rm.arrivo);
+        //alert(ba_an.arrivo);
+
+        //mi_rm.arrivo = 'Fiumicino'
+        //alert(ba_an.arrivo)
+        // alert(mi_rm.descrizione());
+        //alert(ba_an.descrizione())
+        Treno.prototype.km = 500;
+        // alert(mi_rm.km);
+        //alert(ba_an.km)
+        ba_an.km = 300
+            //alert(ba_an.km)
+        ba_an.numerocarrozze = 15;
+        // alert(ba_an.numerocarrozze)
+        //alert(mi_rm.numerocarrozze)
+        //alert(mi_rm instanceof Treno);  //istanza della "classe" 
+        //console.log(ba_an);
+        //alert(typeof ba_an)   //tipo di dato
+        for (var prop in ba_an) {
+            //alert(prop);
+        }
+
+
+        class appartamento {
+            constructor(zona, mq) {
+                this.zona = zona;
+                this.mq = mq;
+                this.descrizione = () => {
+                    return `Zona:${this.zona} - mq:${this.mq}`
+                }
+            }
+            costo(costomq) {
+                return `Il costo totale dell'immobile è:${this.mq * costomq}`
+            }
+        }
+
+        const magliana = new appartamento('Magliana', 80);
+        const parioli = new appartamento('Parioli', 65);
+
+
+        magliana.mq = 110;
+        //alert(magliana.mq)
+        //alert(magliana.descrizione())
+        //alert(magliana.costo(2100))
+        //alert(parioli.costo(4800))
+
+
+        class villa extends appartamento {
+            constructor(zona, mq, trattativa) {
+                super(zona, mq);
+                this.trattativa = trattativa;
+            }
+        }
+
+        var eur = new villa('Eur', 150, 'Privata');
+        var laurentina = new villa('Laurentina', 81, 'Pubblica');
+
+        alert(eur.costo(3850));
+    </script>
+
+</body>
+
+</html>
